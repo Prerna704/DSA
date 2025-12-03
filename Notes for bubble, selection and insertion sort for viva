@@ -1,0 +1,54 @@
+---------Bubble Sort-------
+
+Simple comparison-based algorithm
+
+Compares adjacent elements
+
+Largest element “bubbles” to the end in each pass
+
+Time Complexity: Worst & Average O(n²), Best O(n)
+
+Space Complexity: O(1) → in-place
+
+Stable sorting
+
+Best for small or nearly sorted arrays
+
+------------Selection Sort----------------
+
+Finds the smallest element in each iteration and swaps it to the correct position
+
+Comparisons are many, swaps are few
+
+Time Complexity: O(n²) in all cases
+
+Space Complexity: O(1) → in-place
+
+Unstable sorting
+
+Best when minimizing swaps is important
+
+-----------------Insertion Sort---------------------
+
+Divides array into sorted + unsorted parts
+
+Inserts each element into the correct position in the sorted part
+
+Time Complexity: Worst & Average O(n²), Best O(n)
+
+Space Complexity: O(1) → in-place
+
+Stable sorting
+
+Best for small or nearly sorted data, also useful for online insertion
+
+##########################################################################
+
+Stable: Equal elements keep their original order
+
+Unstable: Equal elements may change order after sorting
+
+
+
+
+
