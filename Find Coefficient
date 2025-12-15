@@ -1,0 +1,67 @@
+David is trying to solve a linear equation to find the values of x and y based on given coefficients a, b and c. Implement a class named Equation where the coefficients are inputted through a method named inputCoefficients(). Create an object of the Equation class, use the method to input the coefficients, and another method solveEquation() to solve and display the values of x and y.
+Can you assist David in creating the program?
+Formula: 
+x = (c - b) / a
+y = (c - a) / b
+Input format :
+The input consists of three double values :
+The first line contains the input a representing the coefficient of the linear equations which is of type double.
+The second line contains the input b representing the coefficient of the linear equations which is of type double.
+The third line contains the input c representing the coefficient of the linear equations which is of type double.
+Output format :
+The first line of output prints one of the following:
+
+If there is a solution for x, print "x = " followed by the result as a double value, rounded off to one decimal place.
+If a is zero and no solution exists, print "a is zero".
+The second line prints one of the following:
+
+If there is a solution for y, print "y = " followed by the result as a double value, rounded off to one decimal place.
+If b is zero and no solution exists, print "b is zero".
+
+// You are using Java
+class Equation {
+    //Type your code here
+    double a,b,c;
+    double x,y;
+    Scanner obj = new Scanner(System.in);
+    
+    public void inputCoefficients(){
+        a = obj.nextDouble();
+        b = obj.nextDouble();
+        c = obj.nextDouble();
+     }
+        public void solveEquation(){
+           
+            if(a != 0 && b != 0){
+            x =(c - b) / a;
+            y =(c - a) / b;
+            System.out.print("x = ");
+            System.out.printf("%.1f",x);
+            System.out.println(" ");
+            System.out.print("y = ");
+            System.out.printf("%.1f",y);
+            System.out.println(" ");
+           }
+           else{
+                if(a ==0){
+                     y =(c - a) / b;
+                    
+                 System.out.println("a is zero");
+                 
+                 System.out.print("y = ");
+                 System.out.printf("%.1f",y);
+            }
+            else if(b == 0){
+                 x =(c - b) / a;
+            System.out.print("x = ");
+            System.out.printf("%.1f",x);
+             System.out.println(" ");
+            System.out.println("b is zero");
+            
+           
+            }
+           }
+        }
+    
+    
+}
