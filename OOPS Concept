@@ -1,0 +1,38 @@
+Arun is working on a project to convert seconds to a time format. He wants to create a program that accepts a time duration in seconds and converts it into hours, minutes, and seconds. 
+Help him write a logic under class SecondsToTime with a constructor that gets input in seconds and converts it into hh:mm:ss format.
+Input format :
+The input consists of a single integer, representing the time duration in seconds.
+Output format :
+The output prints the converted time in the format 'hh:mm:ss' where hh represents hours, mm represents minutes, and ss represents seconds.
+ans=>#################---------------##################
+
+import java.util.*;
+class SecondsToTime {
+   //type your code here
+   int sec;
+   int hr;
+   int min;
+   public SecondsToTime(int sec){
+       this.sec = sec;
+   }
+   
+   public void displayTime(){
+       
+       min = (sec % 3600)/60;
+       hr = sec / 3600;
+       sec = (sec % 3600)% 60;
+       System.out.printf("%02d : %02d : %02d", hr,min,sec);
+   }
+   public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int totalSeconds = scanner.nextInt();
+        scanner.close();
+
+        SecondsToTime timeConverter = new SecondsToTime(totalSeconds);
+        timeConverter.displayTime();
+    }
+}
+   
+   
+}
