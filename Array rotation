@@ -1,0 +1,60 @@
+Goutham is given the task of developing a program that efficiently shuffles the elements of an array. He wants to create a ArrayRotator class with a constructor that takes an array and the number of positions to rotate in the right. Users input the array size and elements, specify the rotating positions, and print the rearranged sequence.
+Assist Goutham in developing the program.
+Input format :
+The first line of input consists of an integer N, representing the elements of the array.
+The second line consists of N space-separated integers representing the array elements.
+The third line consists of an integer M, representing the number of positions to rotate.
+Output format :
+The output prints the rearranged array of elements, containing N integers, after rotating the array by M positions.
+
+import java.util.Scanner;
+
+class ArrayRotator {
+int[] originalArray = new int[10];
+int positions;
+ public ArrayRotator(int[] originalArray, int positions) {
+        //type your code here
+        this.originalArray = originalArray;
+        this.positions = positions;
+        int k = originalArray.length - positions;
+        int[] part1 = new int[positions];
+        int[] part2 = new int[k];
+       
+          for(int i = 0; i < positions; i++){
+              part1[i] = originalArray[k + i];
+                   }
+        for(int i = 0; i < k; i++){
+            part2[i] = originalArray[i];
+                               }
+        for(int i = 0 ; i < positions; i++){
+            originalArray[i] = part1[i];
+        }
+        for(int  i = 0 ; i < k; i++ ){
+            originalArray[positions + i] = part2[i];
+        }
+     }
+    public void printRotatedArray() {
+        for(int i= 0; i < originalArray.length; i++){
+            System.out.print(originalArray[i] + " ");
+       }
+        }
+    public static void main(String[] args) {
+        //type your code here
+        Scanner obj = new Scanner (System.in);
+        int N = obj.nextInt();
+        
+        int arr[] = new int[N];
+        
+        for (int i = 0; i < N; i++){
+            arr[i] = obj.nextInt();
+        }
+        
+        int M = obj.nextInt();
+        
+        ArrayRotator obb = new ArrayRotator(arr,M);
+        obb. printRotatedArray();
+    
+        
+    }
+
+}
