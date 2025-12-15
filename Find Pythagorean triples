@@ -1,0 +1,35 @@
+Laura is learning about Pythagorean triples in her math class. She wants to create a program to determine whether a set of three integers forms a Pythagorean triple. 
+
+
+
+Implement a program using the Pythagorean class to input the sides of a triangle and determine if it is a Pythagorean triple or not. 
+
+
+
+Note: A Pythagorean triple is a set of three integers a, b, and c, satisfying a2+ b2 = c2 or b2+ c2 = a2  or a2+ c2 = b2.
+
+Input format :
+The input consists of three space-separated integers a, b, and c representing the sides of a triangle.
+
+Output format :
+The output prints "Pythagorean triple" or "Not a Pythagorean triple" based on the condition.
+
+
+// You are using Java
+class Pythagorean {
+    //type your code here
+    int a,b,c;
+    
+    
+    public Boolean isPythagoreanTriple(){
+        int x = a*a + b*b;
+        int y = b*b + c*c;
+        int z = a*a + c*c;
+        if(x == c*c || y == a*a || z == b*b){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+}
