@@ -1,0 +1,40 @@
+Roshni is tasked with developing a program for concatenating two arrays provided by the user. To accomplish this, she wants to create a class named ArrayConcatenator. The class includes a constructor to concatenate the elements of the input arrays. She wants to print the elements of the resulting array.
+Help Roshni to complete the program.
+Input format :
+The first line of input consists of an integer N, representing the number of elements of the first array.
+The second line consists of N space-separated integers representing the first array elements.
+The third line consists of an integer M, representing the number of elements of the second array.
+The fourth line consists of M space-separated integers, representing the second array elements.
+Output format :
+The output prints the concatenated array of (M+N) integers, separated by spaces.
+
+// You are using Java
+class ArrayConcatenator {
+    //Type your code here
+    int[] firstArray = new int[10];
+    int[] secondArray = new int[10];
+    int[] finalArray = new int[10];
+    
+    public ArrayConcatenator(int[] firstArray,int[] secondArray){
+        this. firstArray = firstArray;
+        this.secondArray = secondArray;
+        this.finalArray = new int[firstArray.length + secondArray.length];
+        
+          for(int i = 0; i < firstArray.length; i++){
+            finalArray[i] = firstArray[i];
+        }
+        for(int i = 0; i < secondArray.length; i++){
+            finalArray[firstArray.length + i] = secondArray[i];
+        }
+    }
+    
+    public void printConcatenatedArray(){
+        for(int i = 0; i < finalArray.length; i++){
+            System.out.print(finalArray[i] + " ");
+        }
+      
+        
+    }
+    
+    
+}
